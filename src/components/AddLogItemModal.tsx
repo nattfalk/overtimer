@@ -26,6 +26,9 @@ const AddLogItemModal: React.FC<AddLogItemModalProps> = ({
   useEffect(() => {
     if (isOpen) {
       setShow(true);
+      setHours(0);
+      setMinutes(0);
+      setDate(new Date().toLocaleDateString('sv-SE').slice(0, 10));
       // Start animation after a brief delay to ensure the element is rendered
       const timer = setTimeout(() => setAnimate(true), 10);
       return () => clearTimeout(timer);
