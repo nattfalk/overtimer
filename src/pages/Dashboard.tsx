@@ -72,6 +72,10 @@ const Dashboard: React.FC = () => {
       setAddError('Det finns redan en post för denna dag.');
       return;
     }
+    if (newEntry.hours === 0 && newEntry.minutes === 0) {
+      setAddError('Du måste ange ett värde för timmar eller minuter.');
+      return;
+    }
     const updated = [...logItems, newEntry];
     saveLogItems(updated);
     setLogItems(updated);
